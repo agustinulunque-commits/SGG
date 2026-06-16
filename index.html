@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGG - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sistema SGG</h1>
+
+        <button id="themeSwitch" aria-label="Cambiar modo de pantalla">
+            🌙 Cambiar tema
+        </button>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <h2>Inicio de sesión</h2>
+
+            <form id="loginForm">
+
+                <label for="username">Usuario:</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    required>
+
+                <label for="password">Contraseña:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    required>
+
+                <button type="submit">
+                    Ingresar
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+    </main>
+
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
