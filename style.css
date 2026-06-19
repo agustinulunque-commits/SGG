@@ -1,0 +1,56 @@
+:root {
+    --background: #ffffff;
+    --text: #000000;
+    --card: #eeeeee;
+    --button: #2563eb;
+}
+
+.dark {
+    --background: #121212;
+    --text: #ffffff;
+    --card: #1f1f1f;
+    --button: #9333ea;
+}
+
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+
+header {
+    text-align: center;
+}
+
+
+.login-container {
+    background-color: var(--card);
+    width: 300px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+
+button {
+    background-color: var(--button);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+button:hover {
+    opacity: 0.8;
+}
