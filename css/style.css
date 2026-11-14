@@ -1,0 +1,145 @@
+/* ---------- Tema claro: azul grisáceo claro con cristal esmerilado ---------- */
+:root {
+    --background: #d6e0ec;
+    --text: #111111;
+    --muted: #444444;
+    --glass: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(0, 0, 0, 0.12);
+    --field: rgba(255, 255, 255, 0.85);
+    --field-border: #6b7280;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --ok: #0a6b3a;
+    --error: #b00020;
+}
+
+/* ---------- Tema oscuro: azul noche ---------- */
+.dark {
+    --background: #0b1020;
+    --text: #f5f7fa;
+    --muted: #c3cbd6;
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --field: rgba(255, 255, 255, 0.1);
+    --field-border: #9aa7b8;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --ok: #6fd9a0;
+    --error: #ff8a9b;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+h1 { margin: 0.5rem 0 0; }
+
+/* ---------- Tarjeta de cristal ---------- */
+.login-container {
+    background-color: var(--glass);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    width: 380px;
+    max-width: calc(100% - 2rem);
+    box-sizing: border-box;
+    margin: 40px auto;
+    padding: 40px 36px;
+    border-radius: 20px;
+}
+
+.login-container h2 { margin: 0 0 28px; font-size: 1.6rem; }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 22px;
+    padding: 12px;
+    color: var(--text);
+    background-color: var(--field);
+    border: 2px solid var(--field-border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* ---------- Botones (negro en claro, blanco en oscuro) ---------- */
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover { opacity: 0.8; }
+
+#loginForm button { width: 100%; padding: 12px; }
+
+.theme-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+}
+
+:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+.dark :focus-visible { outline-color: #9ccbff; }
+
+/* ---------- Mensajes ---------- */
+#message {
+    margin: 15px 0 0;
+    font-weight: 600;
+}
+#message.ok { color: var(--ok); }
+#message.error { color: var(--error); }
+
+/* ---------- Usuarios de prueba ---------- */
+.demo-users {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--glass-border);
+}
+.demo-users h3 { margin: 0 0 16px; font-size: 1.1rem; }
+
+.demo-list {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.demo-list li {
+    padding: 14px 16px;
+    background-color: var(--field);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+.demo-list p { margin: 0 0 6px; }
+.demo-list p:last-child { margin-bottom: 0; }
+.demo-list .demo-name { margin-bottom: 10px; font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+    body { transition: none; }
+}
