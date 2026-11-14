@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Inicio de sesión del Sistema SGG.">
+    <title>Sistema SGG | Inicio de sesión</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button id="themeSwitch" type="button" class="theme-btn" aria-pressed="false">
+        <span aria-hidden="true">🌙</span> Cambiar tema
+    </button>
+
+    <header>
+        <h1>Sistema SGG</h1>
+    </header>
+
+    <main>
+        <section class="login-container" aria-labelledby="login-title">
+            <h2 id="login-title">Inicio de sesión</h2>
+
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" autocomplete="username" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" autocomplete="current-password" required>
+
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <section class="demo-users" aria-labelledby="demo-title">
+                <h3 id="demo-title">Usuarios de prueba</h3>
+                <ul class="demo-list">
+                    <li>
+                        <p class="demo-name">Usuario 1</p>
+                        <p>Usuario: <strong>admin</strong></p>
+                        <p>Contraseña: <strong>1234</strong></p>
+                    </li>
+                    <li>
+                        <p class="demo-name">Usuario 2</p>
+                        <p>Usuario: <strong>usuario</strong></p>
+                        <p>Contraseña: <strong>abcd</strong></p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
