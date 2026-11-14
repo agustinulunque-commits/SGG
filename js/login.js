@@ -22,7 +22,7 @@ form.addEventListener("submit", function (e) {
 
     if (userFound) {
         localStorage.setItem("usuarioActivo", username);
-        message.textContent = "Inicio de sesión correcto";
+        message.textContent = "A iniciado sesion con exito";
         message.className = "ok";
     } else {
         message.textContent = "Usuario o contraseña incorrectos";
