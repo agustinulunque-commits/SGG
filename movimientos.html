@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SGG - Movimientos</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; padding: 0 12px; }
+    form { display: grid; gap: 8px; margin-bottom: 16px; }
+    input, select, button { padding: 8px; font-size: 1rem; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #ccc; padding: 6px; text-align: left; }
+    .ingreso { color: green; }
+    .egreso { color: crimson; }
+    #balance { font-size: 1.4rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Sistema de Gestión de Gastos</h1>
+  <p>Balance: <span id="balance">$0.00</span></p>
+
+  <form id="formMovimiento">
+    <input type="text" id="descripcion" placeholder="Descripción" required>
+    <input type="number" id="monto" placeholder="Monto" step="0.01" min="0.01" required>
+    <input type="text" id="categoria" placeholder="Categoría (ej: Comida)" required>
+    <select id="tipo" required>
+      <option value="egreso">Egreso</option>
+      <option value="ingreso">Ingreso</option>
+    </select>
+    <input type="date" id="fecha" required>
+    <button type="submit">Registrar movimiento</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>Fecha</th><th>Descripción</th><th>Categoría</th><th>Tipo</th><th>Monto</th><th></th></tr>
+    </thead>
+    <tbody id="listaMovimientos"></tbody>
+  </table>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/movimientos.js"></script>
+</body>
+</html>
