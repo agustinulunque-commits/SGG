@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Registro de usuario del Sistema SGG.">
+    <title>Sistema SGG | Registro de usuario</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/tema.js"></script>
+</head>
+<body>
+
+    <button id="themeSwitch" type="button" class="theme-btn" role="switch" aria-checked="false">
+        <span id="themeIcon" aria-hidden="true">🌙</span> Cambiar tema
+    </button>
+
+    <header>
+        <h1>Sistema SGG</h1>
+    </header>
+
+    <main>
+        <section class="login-container" aria-labelledby="login-title">
+            <h2 id="login-title">Crear cuenta</h2>
+
+            <form id="registroForm" novalidate>
+                <div class="campo">
+                    <label for="nombre">Nombre/s:</label>
+                    <input type="text" id="nombre" autocomplete="given-name" required>
+                    <p class="error" id="err-nombre"></p>
+                </div>
+                <div class="campo">
+                    <label for="apellido">Apellido/s:</label>
+                    <input type="text" id="apellido" autocomplete="family-name" required>
+                    <p class="error" id="err-apellido"></p>
+                </div>
+                <div class="campo">
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="nacimiento" autocomplete="bday" required>
+                    <p class="error" id="err-nacimiento"></p>
+                </div>
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" autocomplete="email" required>
+                    <p class="error" id="err-email"></p>
+                </div>
+                <div class="campo">
+                    <label for="password">Contraseña:</label>
+                    <div class="pw">
+                        <input type="password" id="password" autocomplete="new-password" required>
+                        <button type="button" class="ver" data-target="password" aria-pressed="false" aria-label="Mostrar contraseña:">Mostrar</button>
+                    </div>
+                    <ul class="reglas" id="reglas" aria-label="Requisitos de la contraseña"><li data-r="len">Mínimo 8 caracteres</li><li data-r="may">Al menos 1 letra mayúscula</li><li data-r="min">Al menos 1 letra minúscula</li><li data-r="num">Al menos 1 número</li><li data-r="esp">Al menos 1 símbolo (!, @, #, $, %...)</li></ul>
+                    <p class="error" id="err-password"></p>
+                </div>
+                <div class="campo">
+                    <label for="repetir">Repetir contraseña:</label>
+                    <div class="pw">
+                        <input type="password" id="repetir" autocomplete="new-password" required>
+                        <button type="button" class="ver" data-target="repetir" aria-pressed="false" aria-label="Mostrar repetir contraseña:">Mostrar</button>
+                    </div>
+                    <p class="error" id="err-repetir"></p>
+                </div>
+                <button type="submit" id="enviar" class="btn" disabled>Crear cuenta</button>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+            <nav class="enlaces" aria-label="Navegación"><a href="index.html">Ya tengo cuenta</a></nav>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+<script src="js/tema-ui.js"></script>
+<script src="js/password-ui.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/registro.js"></script>
+</body>
+</html>
