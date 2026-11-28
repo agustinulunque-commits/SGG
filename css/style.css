@@ -11,6 +11,7 @@
     --button-text: #ffffff;
     --ok: #0a6b3a;
     --error: #b00020;
+    --link: #1d4ed8;
 }
 
 /* ---------- Tema oscuro: azul noche ---------- */
@@ -26,6 +27,7 @@
     --button-text: #000000;
     --ok: #6fd9a0;
     --error: #ff8a9b;
+    --link: #9ccbff;
 }
 
 body {
@@ -70,7 +72,7 @@ label {
 input {
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 22px;
+    margin: 0;
     padding: 12px;
     color: var(--text);
     background-color: var(--field);
@@ -78,6 +80,9 @@ input {
     border-radius: 8px;
     font-size: 1rem;
 }
+input[aria-invalid="true"] { border-color: var(--error); }
+
+.campo { margin-bottom: 22px; }
 
 /* ---------- Botones (negro en claro, blanco en oscuro) ---------- */
 button {
@@ -91,8 +96,9 @@ button {
 }
 
 button:hover { opacity: 0.8; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
 
-#loginForm button { width: 100%; padding: 12px; }
+form .btn { width: 100%; padding: 12px; }
 
 .theme-btn {
     position: fixed;
@@ -101,19 +107,39 @@ button:hover { opacity: 0.8; }
     z-index: 10;
 }
 
+/* ---------- Ver / ocultar contraseña ---------- */
+.pw { display: flex; gap: 8px; }
+.pw input { flex: 1; width: auto; min-width: 0; }
+.ver {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--field-border);
+}
+
 :focus-visible {
     outline: 3px solid #2563eb;
     outline-offset: 2px;
 }
 .dark :focus-visible { outline-color: #9ccbff; }
 
+/* ---------- Requisitos de contraseña en tiempo real ---------- */
+.reglas { list-style: none; margin: 10px 0 0; padding: 0; font-size: 0.9rem; }
+.reglas li { color: var(--error); }
+.reglas li::before { content: "\2717\00a0"; font-weight: 700; }
+.reglas li.ok { color: var(--ok); }
+.reglas li.ok::before { content: "\2713\00a0"; }
+
 /* ---------- Mensajes ---------- */
+.error { margin: 6px 0 0; color: var(--error); font-size: 0.9rem; }
 #message {
     margin: 15px 0 0;
     font-weight: 600;
 }
 #message.ok { color: var(--ok); }
 #message.error { color: var(--error); }
+
+.enlaces { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.enlaces a { color: var(--link); }
 
 /* ---------- Usuarios de prueba ---------- */
 .demo-users {
