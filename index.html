@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Inicio de sesión del Sistema SGG.">
     <title>Sistema SGG | Inicio de sesión</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/tema.js"></script>
 </head>
 <body>
 
-    <button id="themeSwitch" type="button" class="theme-btn" aria-pressed="false">
-        <span aria-hidden="true">🌙</span> Cambiar tema
+    <button id="themeSwitch" type="button" class="theme-btn" role="switch" aria-checked="false">
+        <span id="themeIcon" aria-hidden="true">🌙</span> Cambiar tema
     </button>
 
     <header>
@@ -21,36 +23,47 @@
         <section class="login-container" aria-labelledby="login-title">
             <h2 id="login-title">Inicio de sesión</h2>
 
-            <form id="loginForm">
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" autocomplete="username" required>
-
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" autocomplete="current-password" required>
-
-                <button type="submit">Ingresar</button>
+            <form id="loginForm" novalidate>
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" autocomplete="email" required>
+                    <p class="error" id="err-email"></p>
+                </div>
+                <div class="campo">
+                    <label for="password">Contraseña:</label>
+                    <div class="pw">
+                        <input type="password" id="password" autocomplete="current-password" required>
+                        <button type="button" class="ver" data-target="password" aria-pressed="false" aria-label="Mostrar contraseña:">Mostrar</button>
+                    </div>
+                    <p class="error" id="err-password"></p>
+                </div>
+                <button type="submit" id="enviar" class="btn">Ingresar</button>
             </form>
 
             <p id="message" role="status" aria-live="polite"></p>
 
+            <nav class="enlaces" aria-label="Navegación"><a href="registro.html">Crear cuenta</a><a href="recuperar.html">Olvidé mi contraseña</a></nav>
             <section class="demo-users" aria-labelledby="demo-title">
                 <h3 id="demo-title">Usuarios de prueba</h3>
                 <ul class="demo-list">
                     <li>
                         <p class="demo-name">Usuario 1</p>
-                        <p>Usuario: <strong>admin</strong></p>
-                        <p>Contraseña: <strong>1234</strong></p>
+                        <p>Correo: <strong>ana@sgg.com</strong></p>
+                        <p>Contraseña: <strong>Clave#2026</strong></p>
                     </li>
                     <li>
                         <p class="demo-name">Usuario 2</p>
-                        <p>Usuario: <strong>usuario</strong></p>
-                        <p>Contraseña: <strong>abcd</strong></p>
+                        <p>Correo: <strong>luis@sgg.com</strong></p>
+                        <p>Contraseña: <strong>Gasto$2026</strong></p>
                     </li>
                 </ul>
             </section>
         </section>
     </main>
 
-    <script src="js/login.js"></script>
+    <script src="js/storage.js"></script>
+<script src="js/tema-ui.js"></script>
+<script src="js/password-ui.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>
